@@ -28,7 +28,7 @@ def main():
     videos = []
     for prid in prids:
         contents = requests.get(u'http://e.omroep.nl/metadata/aflevering/%s' % (prid,)).text
-        video = json.loads(contents[14:-2])
+        video = json.loads(contents[14:-2]) # cuts of a function call
         videos.append(video)
         sleep(1)
     print json.dumps(videos)
